@@ -1,7 +1,9 @@
 #!/bin/bash
+#
+# wget https://raw.githubusercontent.com/fli217/swiftfan-public/master/manage.sh -O manage.sh
+#
 # This script is for automation, it has minimum output and require no user
 # confirmation. Know what you are doing before continue!
-# wget https://raw.githubusercontent.com/fli217/swiftfan-public/master/manage.sh -O manage.sh
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 SYS_DT=$(date +%F-%T)
