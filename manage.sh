@@ -59,9 +59,6 @@ common_check
 
 VPN_USER=$1
 VPN_PASSWORD=$2
-echo $VPN_USER
-echo $VPN_PASSWORD
-
 if [ -z "$VPN_USER" ] || [ -z "$VPN_PASSWORD" ]; then
   exiterr "Usage: sudo sh $0 'username' 'password'"
 fi
@@ -97,9 +94,9 @@ EOF
 chmod 600 /etc/ppp/chap-secrets* /etc/ipsec.d/passwd*
 }
 
-if [[ $1 == "ls" ]]; then list_vpn_user; fi
-if [[ $1 == "update" ]]; then update_vpn_user $2 $3; fi
-if [[ $1 == "del" ]]; then del_vpn_user $2; fi
-if [[ $1 == "reset" ]]; then reset_vpn_user; fi
+if [ $1 = "ls" ]; then list_vpn_user; fi
+if [ $1 = "update" ]; then update_vpn_user $2 $3; fi
+if [ $1 = "del" ]; then del_vpn_user $2; fi
+if [ $1 = "reset" ]; then reset_vpn_user; fi
 
 # exit 0
