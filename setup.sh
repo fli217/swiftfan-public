@@ -511,7 +511,6 @@ service xl2tpd restart 2>/dev/null
 
 ## Defer setup until we have the complete script
 vpnsetup "$@"
-wget https://raw.githubusercontent.com/fli217/swiftfan-public/master/manage.sh -O manage.sh
 
 exit 0
 

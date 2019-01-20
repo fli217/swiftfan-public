@@ -1,6 +1,7 @@
 #!/bin/bash
 # This script is for automation, it has minimum output and require no user
 # confirmation. Know what you are doing before continue!
+# wget https://raw.githubusercontent.com/fli217/swiftfan-public/master/manage.sh -O manage.sh
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 SYS_DT=$(date +%F-%T)
@@ -99,4 +100,4 @@ if [ $1 = "update" ]; then update_vpn_user $2 $3; fi
 if [ $1 = "del" ]; then del_vpn_user $2; fi
 if [ $1 = "reset" ]; then reset_vpn_user; fi
 
-# exit 0
+exit 0
