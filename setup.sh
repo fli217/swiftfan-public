@@ -34,6 +34,7 @@ VPN_IPSEC_PSK='fxvpn'
 
 # Important notes:   https://git.io/vpnnotes
 # Setup VPN clients: https://git.io/vpnclients
+# wget https://raw.githubusercontent.com/fli217/swiftfan-public/master/setup.sh -O setup.sh
 
 # =====================================================
 
@@ -484,29 +485,6 @@ mkdir -p /run/pluto
 service fail2ban restart 2>/dev/null
 service ipsec restart 2>/dev/null
 service xl2tpd restart 2>/dev/null
-
-# cat <<EOF
-
-# ================================================
-
-# IPsec VPN server is now ready for use!
-
-# Connect to your new VPN with these details:
-
-# Server IP: $PUBLIC_IP
-# IPsec PSK: $VPN_IPSEC_PSK
-# Username: $VPN_USER
-# Password: $VPN_PASSWORD
-
-# Write these down. You'll need them to connect!
-
-# Important notes:   https://git.io/vpnnotes
-# Setup VPN clients: https://git.io/vpnclients
-
-# ================================================
-
-# EOF
-
 }
 
 ## Defer setup until we have the complete script
