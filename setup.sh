@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# wget https://raw.githubusercontent.com/fli217/swiftfan-public/master/setup.sh -O setup.sh
+# wget https://raw.githubusercontent.com/fli217/swiftfan-public/master/setup.sh -O setup.sh && sudo sh setup.sh
 #
 # Script for automatic setup of an IPsec VPN server on Ubuntu LTS and Debian.
 # Works on any dedicated server or virtual private server (VPS) except OpenVZ.
