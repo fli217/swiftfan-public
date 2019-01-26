@@ -92,6 +92,16 @@ VPN_PASSWORD_ENC=$(openssl passwd -1 "$VPN_PASSWORD")
 cat >> /etc/ipsec.d/passwd <<EOF
 $VPN_USER:$VPN_PASSWORD_ENC:xauth-psk
 EOF
+}
+
+del_vpn_user() {
+conf_bk "/etc/ppp/chap-secrets"
+conf_bk "/etc/ipsec.d/passwd"
+
+# Delete VPN user
+sed -i "/^\"$VPN_USER\" /d" /etc/ppp/chap-secrets
+# shellcheck disable=SC2016
+sed -i '/^'"$VPN_USER"':\$1\$/d' /etc/ipsec.d/passwd
 
 # Update file attributes
 chmod 600 /etc/ppp/chap-secrets* /etc/ipsec.d/passwd*
@@ -101,5 +111,8 @@ if [ $1 = "ls" ]; then list_vpn_user; fi
 if [ $1 = "update" ]; then update_vpn_user $2 $3; fi
 if [ $1 = "del" ]; then del_vpn_user $2; fi
 if [ $1 = "reset" ]; then reset_vpn_user; fi
+
+# Update file attributes
+chmod 600 /etc/ppp/chap-secrets* /etc/ipsec.d/passwd*
 
 exit 0
