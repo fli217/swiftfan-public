@@ -95,6 +95,8 @@ EOF
 }
 
 del_vpn_user() {
+VPN_USER=$1
+
 conf_bk "/etc/ppp/chap-secrets"
 conf_bk "/etc/ipsec.d/passwd"
 
